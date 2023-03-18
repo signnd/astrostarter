@@ -17,6 +17,12 @@ const goal = 3;
     <meta charset ="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>{pageTitle} - Astro</title>
+    <style>
+        h1 {
+            color: purple;
+            font-size: 4rem;
+        }
+    </style>
 </head>
 <body>
     <h1>My Astro Site</h1>
@@ -28,6 +34,10 @@ const goal = 3;
     <p>This site will update as I complete more of the tutorial, so keep checking back and see how my journey is going!</p>
     <h2>Facts about me</h2>
     <p>I am {identity.name}, I live in {identity.country}</p>
+    <p>My devices are:</p>
+    <ul>
+        {devices.map((device) => <li>{device}</li>)}
+    </ul>
     {happy && <p>I am happy to be learning Astro!</p>}
     {finished && <p>I finished this tutorial!</p>}
     {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
