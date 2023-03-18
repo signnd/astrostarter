@@ -1,9 +1,35 @@
+---
+const pageTitle = "About Me"
+const identity = {
+    name: "signnd",
+    country: "Indonesia",
+    occupation: "student",
+    hobbies: ["typing", "reading", "blogging"],
+};
+const devices = ["phone", "tablet", "TV", "earbuds"];
+const happy = true;
+const finished = false;
+const goal = 3;
+---
+
+<html lang="en">
+  <head>
+    <meta charset ="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{pageTitle} - Astro</title>
+</head>
 <body>
     <h1>My Astro Site</h1>
     <a href="/">Home</a>
     <a href="/about/">About</a>
     <a href="/blog/">Blog</a>
-    <h2>About this site</h2>
+    <h2>{pageTitle}</h2>
     <p>Following the astro tutorial</p>
     <p>This site will update as I complete more of the tutorial, so keep checking back and see how my journey is going!</p>
-  </body>
+    <h2>Facts about me</h2>
+    <p>I am {identity.name}, I live in {identity.country}</p>
+    {happy && <p>I am happy to be learning Astro!</p>}
+    {finished && <p>I finished this tutorial!</p>}
+    {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
+</body>
+</html>
