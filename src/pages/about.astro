@@ -10,6 +10,10 @@ const devices = ["phone", "tablet", "TV", "earbuds"];
 const happy = true;
 const finished = false;
 const goal = 3;
+
+const skillColor = "navy";
+const fontWeight = "bold";
+const textCase = "uppercase";
 ---
 
 <html lang="en">
@@ -17,10 +21,15 @@ const goal = 3;
     <meta charset ="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>{pageTitle} - Astro</title>
-    <style>
+    <style define:vars={{skillColor, fontWeight, textCase}}>
         h1 {
-            color: purple;
+            color:cornflowerblue;
             font-size: 4rem;
+        }
+        .skill {
+            color: var(--skillColor);
+            font-weight: var(--fontWeight);
+            text-transform: var(--textCase);
         }
     </style>
 </head>
@@ -36,7 +45,7 @@ const goal = 3;
     <p>I am {identity.name}, I live in {identity.country}</p>
     <p>My devices are:</p>
     <ul>
-        {devices.map((device) => <li>{device}</li>)}
+        {devices.map((device) => <li class="skill">{device}</li>)}
     </ul>
     {happy && <p>I am happy to be learning Astro!</p>}
     {finished && <p>I finished this tutorial!</p>}
